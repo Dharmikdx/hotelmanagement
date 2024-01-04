@@ -3,6 +3,7 @@ package Initial;
 import java.util.Scanner;
 
 public class HomeSelectHotelType {
+    //
     public static void main(String[] args) {
         displayoption();
         Util util = new Util();

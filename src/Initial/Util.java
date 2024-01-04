@@ -19,6 +19,7 @@ public class Util {
 
         System.out.print("Enter your email ID: ");
         String emailId = scanner.next();
+        //
 
         System.out.print("Enter your address: ");
         scanner.nextLine(); // Consume the newline character
