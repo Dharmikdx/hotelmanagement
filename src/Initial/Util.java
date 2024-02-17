@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Util {
-    public void signUpScreen(){
+    public void registerAccount(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your first name: ");
         String firstName = scanner.next();
@@ -19,17 +19,25 @@ public class Util {
 
         System.out.print("Enter your email ID: ");
         String emailId = scanner.next();
-        //
 
         System.out.print("Enter your address: ");
         scanner.nextLine(); // Consume the newline character
-        String address = scanner.nextLine();
 
-        // Generate a random number to use in the filename
+        String address = scanner.nextLine();
+        SignUp userinfo= null;
+        try {
+            userinfo = new SignUp(firstName,emailId,address,phoneNumber);
+            System.out.print( firstName +emailId +address);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        userinfo.WriteInfo();
+
+       /* // Generate a random number to use in the filename
         int randomNum = new Random().nextInt(1234);
 
         // Create a folder (if not exists)
-        Path folderPath = Paths.get("UserAccounts");
+        Path folderPath = Paths.get("/Users/dharmikkumarsavani/Java_Project");
         try{
             Files.createDirectories(folderPath);
         } catch(
@@ -53,7 +61,7 @@ public class Util {
             System.out.println("Account created successfully. Details saved in " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
     public void reservation(){
